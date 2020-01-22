@@ -15,6 +15,8 @@ Title = soup.find(id='productTitle').text.strip()
 try:
     price = soup.find(id='priceblock_dealprice').text
 except AttributeError:
+    price = soup.find(id='priceblock_ourprice').text
+else:
     price = soup.find(id='priceblock_saleprice').text
 
 # print(Title)
