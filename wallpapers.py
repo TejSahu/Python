@@ -36,15 +36,15 @@ for i in range(18):
     response = requests.get(download_urls[i], headers=headers)
     soup = BeautifulSoup(response.content, features='lxml')
     for a in soup.findAll('div', {'class': 'wallpaper-resolutions'}):
-        for b in a.findAll('a', title='HD 1920 x 1080 Wallpaper'): # here it fails if it cannot find the resolution
+        for b in a.findAll('a', title='HD 1920 x 1080 Wallpaper'): #2 here it fails if it cannot find the resolution
             d = c + b.get('href')
             print(d)
             # print(b.get('href'))
             # print(c + b.get('href'))
-    request2 = requests.get(d)
-
-#Change the path "C:\\Users\\Tej-Laptop\\Desktop\\Game\\" to your desired location below
-    with open("C:\\Users\\Tej-Laptop\\Desktop\\Game\\" + url2, 'wb') as image:
-        image.write(request2.content)
+    if d != '': #introduced to fix the issue #2
+        request2 = requests.get(d)
+        # Change the path "C:\\Users\\Tej-Laptop\\Desktop\\Game\\" to your desired location below
+        with open("C:\\Users\\Tej-Laptop\\Desktop\\Game\\" + url2, 'wb') as image:
+            image.write(request2.content)
 
 print("Finished Downloading")
