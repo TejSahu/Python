@@ -36,7 +36,7 @@ for i in range(18):
     response = requests.get(download_urls[i], headers=headers)
     soup = BeautifulSoup(response.content, features='lxml')
     for a in soup.findAll('div', {'class': 'wallpaper-resolutions'}):
-        for b in a.findAll('a', title='HD 1920 x 1080 Wallpaper'):
+        for b in a.findAll('a', title='HD 1920 x 1080 Wallpaper'): # here it fails if it cannot find the resolution
             d = c + b.get('href')
             print(d)
             # print(b.get('href'))
