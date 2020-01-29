@@ -36,5 +36,11 @@ def collatz(number):
 
 
 user_number = int(input("Please enter a number :"))
+#  ---------to check if integer is entered------------
+try:
+    number = int(user_number)
+except ValueError:
+    print("Please enter a valid integer number")
+    exit()
 while user_number != 1:
     user_number = collatz(user_number)
