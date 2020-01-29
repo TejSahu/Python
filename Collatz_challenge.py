@@ -38,7 +38,7 @@ def collatz(number):
 user_number = int(input("Please enter a number :"))
 #  ---------to check if integer is entered------------
 try:
-    number = int(user_number)
+    user_number = int(user_number)
 except ValueError:
     print("Please enter a valid integer number")
     exit()
