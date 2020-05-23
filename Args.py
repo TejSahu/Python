@@ -45,7 +45,7 @@ def num(args):
     print(*args)
 
 
-list1 = ['Amir', 'Chicken', 'Shop']
+list1 = ['Amir', 'Chicken', 'Shop' , 'Lohegaon']
 # num(list1)
 
 
