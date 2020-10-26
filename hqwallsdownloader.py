@@ -6,9 +6,15 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
                          'Chrome/70.0.3538.77 Safari/537.36'}
 
 # Enter the page URL, main page url like the one here where you can see the thumbnails
+<<<<<<< HEAD
 for page in range(20, 26):
     print("The value of page is " + str(page))
     url = 'https://hdqwalls.com/category/superheroes-wallpapers/page/' + str(page)
+=======
+for page in range(2, 10):
+    print("The value of page is " + str(page))
+    url = 'https://hdqwalls.com/category/nature-wallpapers' + str(page)
+>>>>>>> 7f7401b3fb13ec7170e62e2c4e100afe17ee22f1
     print(url)
     response = requests.get(url, headers=headers)
 
@@ -51,7 +57,7 @@ for page in range(20, 26):
 
             request2 = requests.get(d)
             # Change the path "C:\\Users\\Tej-Laptop\\Desktop\\Game\\" to your desired location below
-            with open("C:\\Users\\Tej-Local\\Downloads\\" + url2, 'wb') as image:
+            with open("C:\\Users\\Tej-Admin\\Downloads\\" + url2, 'wb') as image:
                 image.write(request2.content)
 
     del a
